@@ -1,0 +1,46 @@
+.title1::before {
+    content: "";
+    background: #7b1798;
+    height: 4px;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    transform: translateY(63px);
+}
+
+
+.title1::after {
+    content: "";
+    background: #7b1798;
+    height: 10px;
+    width: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    display: block;
+    transform: translateY(8px);
+}
+
+#comments {
+    margin: 100px 0;
+}
+
+.comment {
+    border-left: 4px solid #7b1798;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    /* border-radius: 50%; */
+}
+
+.comment img {
+    height: 60px;
+    width: 60px;
+    margin: 0 10px;
+    border-radius: 50%;
+}
+
+.user-details {
+    display: inline-block;
+    font-size: 12px;
+}

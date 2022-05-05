@@ -1,0 +1,44 @@
+.title2::before {
+    content: "";
+    background: #7b1798;
+    height: 4px;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    transform: translateY(63px);
+}
+
+
+.title2::after {
+    content: "";
+    background: #7b1798;
+    height: 10px;
+    width: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    display: block;
+    transform: translateY(-4px);
+}
+
+.social-media {
+    background: #f8f9fa;
+    padding: 100px 0;
+}
+
+.social-media p {
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+
+.social-media-icons img {
+    width: 80px;
+    transition: 0.5s;
+}
+
+.social-media-icons a:hover img {
+    transform: translateY(-10px);
+}

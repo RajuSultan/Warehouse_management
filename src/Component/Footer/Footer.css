@@ -1,0 +1,42 @@
+#footer {
+    background-image: linear-gradient(to right, #a517ba, #5f1782);
+    color: #ffff;
+}
+
+.footer-img {
+    width: 100%;
+}
+
+.footer-box {
+    padding: 20px;
+}
+
+.footer-box img {
+    width: 90px;
+}
+
+.footer-box p .icon {
+    width: 25px;
+    background-image: linear-gradient(to right, #a517ba, #5f1782);
+    padding: 3px;
+
+}
+
+.footer-box .from-control {
+    box-shadow: none !important;
+    border: none;
+    border-radius: 0;
+    padding: 4px;
+    margin-top: 25px;
+    max-width: 250px;
+}
+
+.footer-box .btn-primary {
+    box-shadow: none !important;
+    border: none;
+    border-radius: 0;
+    margin-top: 30px;
+    background-image: linear-gradient(to right, #a517ba, #5f1782);
+
+
+}
