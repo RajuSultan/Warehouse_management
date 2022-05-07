@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import useProduct from '../Share/Hooks/useProduct';
 import Product from './Product/Product';
 import './Products.css'
@@ -15,9 +16,10 @@ const Products = () => {
                         products.map(product => <Product key={product._id} product={product}></Product>)
                     }
                 </div>
+                <Link to='/managein'>Manage Inventories</Link>
             </div>
 
-        </div>
+        </div >
     );
 };
 

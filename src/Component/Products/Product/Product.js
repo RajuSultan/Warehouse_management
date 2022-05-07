@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Product = ({ product }) => {
     const { _id, picture, name, balance, quantity, color, supplier, company, about } = product;
@@ -19,7 +20,9 @@ const Product = ({ product }) => {
                 </div>
 
 
-                <button style={{ backgroundImage: 'linear-gradient(to right, #a517ba, #5f1782)', color: "#ffff" }} className='position-absolute bottom-0 w-100  btn '>Update</button>
+                <Link to={`/singleitem/${_id}`}>
+                    <button style={{ backgroundImage: 'linear-gradient(to right, #a517ba, #5f1782)', color: "#ffff" }} className='position-absolute bottom-0 w-100  btn '>Update</button>
+                </Link>
 
 
             </div>
