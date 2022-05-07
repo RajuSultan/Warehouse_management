@@ -3,8 +3,13 @@ import { Link } from 'react-router-dom';
 import './Navber.css';
 import logo from "../../images/logo.png";
 import menu from "../../images/menu.png";
+import auth from '../../firebase.init';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { signOut } from 'firebase/auth';
 
 const Navber = () => {
+    const [user, loading, error] = useAuthState(auth);
+
     return (
         <div id='nav-bar'>
             <nav className="navbar navbar-expand-lg ">
@@ -36,15 +41,31 @@ const Navber = () => {
                             </li>
                         </ul>
                         <form className="d-flex">
-                            <button id='hover-color' className="btn btn-outline-light" type="submit">Login </button>
-                            <button className="btn btn-outline-light ms-3" type="submit">Resister</button>
+                            {
+                                user ? <Link onClick={() => signOut(auth)} to="/login"><button id='hover-color' className="btn btn-outline-light" >LogOut</button></Link>
+                                    :
+
+                                    < >
+                                        <Link to='/login'>
+                                            <button id='hover-color' className="btn btn-outline-light" >Login </button>
+                                        </Link>
+                                        <Link to='/resister'>
+                                            < button className="btn btn-outline-light ms-3" type="">Resister</button>
+                                        </Link>
+
+                                    </>
+
+                            }
+
+
+
                         </form>
                     </div>
                 </div>
 
 
-            </nav>
-        </div>
+            </nav >
+        </div >
     );
 };
 
