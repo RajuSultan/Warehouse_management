@@ -14,7 +14,8 @@ const Product = ({ product }) => {
                     <h2>{name}</h2>
                     <p>{balance}</p>
                     <p>{about}<br></br>
-                        <small>Supplier : {supplier}</small></p>
+                        <small className='fw-bold'>Quantity : {quantity}  / </small>
+                        <small className='fw-bold'> Supplier : {supplier}</small></p>
                 </div>
 
 
