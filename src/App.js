@@ -9,6 +9,9 @@ import Login from './Component/Login/Login/Login';
 import Singleitem from './Component/Products/Singleitem/Singleitem';
 import RequireAuth from './Component/RequireAuth/RequireAuth';
 import ManageIn from './Component/Products/ManageIn/ManageIn';
+import Blogs from './Component/Blogs/Blogs';
+import Myitems from './Component/Products/Myitems/Myitems';
+import NotFound from './Component/Share/Notfound/NotFound';
 // import useProduct from '../src/Component/Share/Hooks/useProduct';
 
 
@@ -24,6 +27,7 @@ function App() {
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/resister' element={<Resister></Resister>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/singleitem/:id' element={
           <RequireAuth>
             <Singleitem ></Singleitem>
@@ -34,6 +38,12 @@ function App() {
             <ManageIn></ManageIn>
           </RequireAuth>
         }></Route>
+        <Route path='/myitems' element={
+          <RequireAuth>
+            <Myitems></Myitems>
+          </RequireAuth>
+        }></Route>
+        <Route path='*' element={<NotFound></NotFound>}></Route>
 
 
       </Routes>

@@ -20,14 +20,26 @@ const Navber = () => {
                         <img src={menu} alt="" />
                     </button>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav me-auto mb-2 mb-lg-0 ">
-                            <li className="nav-item">
+                        <ul className="navbar-nav ms-4 me-auto mb-2 mb-lg-0 ">
+                            <li className="nav-item me-3 fs-5">
                                 <Link className="nav-link active text-white" aria-current="page" to="/home">Home</Link>
                             </li>
-                            <li className="nav-item">
-                                <Link className="nav-link active text-white" aria-current="page" to="/home">Home</Link>
+                            <li className="nav-item me-3 fs-5">
+                                <Link className="nav-link active text-white" aria-current="page" to="/blogs">Blogs</Link>
                             </li>
-                            <li className="nav-item dropdown">
+                            {
+                                user ? <>
+                                    <li className="nav-item me-3 fs-5">
+                                        <Link className="nav-link active text-white" aria-current="page" to="/managein">Manage Inventories</Link>
+                                    </li>
+                                    <li className="nav-item me-3 fs-5">
+                                        <Link className="nav-link active text-white" aria-current="page" to="/myitems">My Items</Link>
+                                    </li>
+                                </>
+                                    :
+                                    ""
+                            }
+                            <li className="nav-item dropdown me-3 fs-5">
                                 <Link className="nav-link dropdown-toggle text-white" to="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Dropdown
                                 </Link>
