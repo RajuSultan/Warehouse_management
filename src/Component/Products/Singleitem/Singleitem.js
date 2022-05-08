@@ -24,13 +24,6 @@ const Singleitem = () => {
         setProduct(item);
 
     }, [item])
-    // // console.log(id);
-
-    // const [products, setProducts] = useProduct([]);
-    // // console.log(products);
-    // const selectedId = products.find(item => item._id === id);
-    // setProduct(selectedId);
-    // console.log(product);
 
 
 
@@ -38,8 +31,6 @@ const Singleitem = () => {
 
     const handleQuantityUpdate = () => {
         let decreaseValue = item?.quantity - 1;
-        // console.log(decreaseValue);
-        //    selectedId?.quantity = decreaseValue;
         item.quantity = decreaseValue;
         // console.log(item);
         setProduct(item);
@@ -69,7 +60,6 @@ const Singleitem = () => {
             add = parseInt(item?.quantity) + parseInt(number);
         }
 
-        //    selectedId?.quantity = decreaseValue;
         item.quantity = add;
         // console.log(item);
         setProduct(item);
