@@ -42,6 +42,7 @@ const Myitems = () => {
             .then(data => {
                 console.log(data);
                 alert('User added Successfuly');
+                event.target.reset();
 
             })
 
@@ -95,7 +96,7 @@ const Myitems = () => {
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Image Url</label>
-                    <input ref={imgurlRef} type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder='UrlPma' />
+                    <input ref={imgurlRef} type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder='Url' />
                     <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
                 </div>
                 <div className="mb-3">

@@ -6,6 +6,7 @@ import './Products.css'
 
 const Products = () => {
     const [products, setProducts] = useProduct([]);
+    const items = products.slice(0, 6);
     // console.log(products);
     return (
         <div className=''>
@@ -13,7 +14,7 @@ const Products = () => {
             <div className='container'>
                 <div className='row g-4'>
                     {
-                        products.map(product => <Product key={product._id} product={product}></Product>)
+                        items.map(product => <Product key={product._id} product={product}></Product>)
                     }
                 </div>
                 <Link to='/managein'>Manage Inventories</Link>
