@@ -7,8 +7,8 @@ const ManageIn = () => {
     const handleDelete = (id) => {
         const proceed = window.confirm("Are you sure you want to Delete?");
         if (proceed) {
-            console.log(id);
-            const url = `http://localhost:5000/products/${id}`;
+            // console.log(id);
+            const url = `https://rajusultan.herokuapp.com/products/${id}`;
             fetch(url, {
                 method: "DELETE",
             })

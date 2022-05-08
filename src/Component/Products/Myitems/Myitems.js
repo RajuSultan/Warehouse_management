@@ -7,7 +7,7 @@ import ManageProduct from '../ManageIn/ManageProduct/ManageProduct';
 const Myitems = () => {
     const [user] = useAuthState(auth);
     if (user) {
-        console.log(user.email);
+        // console.log(user.email);
 
     }
 
@@ -26,11 +26,11 @@ const Myitems = () => {
         const balance = priceRef.current.value;
         const about = descriptionRef.current.value;
         const quantity = quantityRef.current.value;
-        console.log(name, email, company, balance, about, quantity);
+        // console.log(name, email, company, balance, about, quantity);
         const product = { name, email, company, balance, about, picture, quantity };
 
         // send data to the server
-        const url = `http://localhost:5000/products`;
+        const url = `https://rajusultan.herokuapp.com/products`;
         fetch(url, {
             method: 'POST',
             headers: {
@@ -40,7 +40,7 @@ const Myitems = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 alert('User added Successfuly');
                 event.target.reset();
 
@@ -50,11 +50,13 @@ const Myitems = () => {
 
     }
     const [products, setProducts] = useProduct([]);
+    const myProducts = products.filter(product => product.email === user.email);
+    // console.log(myProducts);
     const handleDelete = (id) => {
         const proceed = window.confirm("Are you sure you want to Delete?");
         if (proceed) {
             console.log(id);
-            const url = `http://localhost:5000/products/${id}`;
+            const url = `https://rajusultan.herokuapp.com/products${id}`;
             fetch(url, {
                 method: "DELETE",
             })
@@ -114,14 +116,21 @@ const Myitems = () => {
 
             <div className='my-5'>
                 <h1 className='title1 text-center my-5'>ALL Products</h1>
-                <div className="container">
-                    <div className="row g-4">
-                        {
-                            products.map(product => <ManageProduct key={product._id} product={product} handleDelete={handleDelete}></ManageProduct>)
-                        }
+                {
+                    myProducts ?
+                        <div className="container">
+                            <div className="row g-4">
+                                {
+                                    myProducts.map(product => <ManageProduct key={product._id} product={product} handleDelete={handleDelete}></ManageProduct>)
+                                }
 
-                    </div>
-                </div>
+                            </div>
+                        </div>
+                        : <p className='text-center'>You haven't added any product </p>
+
+                }
+
+
 
             </div>
 

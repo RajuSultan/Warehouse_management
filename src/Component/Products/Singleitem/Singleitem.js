@@ -12,7 +12,7 @@ const Singleitem = () => {
     const [item, setItem] = useState({});
     useEffect(() => {
         // const url = `https://obs?cure-fjord-03495.herokuapp.com/products/${id}`;
-        const url = `http://localhost:5000/products/${id}`;
+        const url = `https://rajusultan.herokuapp.com/products/${id}`;
 
 
         fetch(url)
@@ -38,12 +38,12 @@ const Singleitem = () => {
 
     const handleQuantityUpdate = () => {
         let decreaseValue = item?.quantity - 1;
-        console.log(decreaseValue);
+        // console.log(decreaseValue);
         //    selectedId?.quantity = decreaseValue;
         item.quantity = decreaseValue;
-        console.log(item);
+        // console.log(item);
         setProduct(item);
-        const url = `http://localhost:5000/products/${id}`;
+        const url = `https://rajusultan.herokuapp.com/products/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -73,7 +73,7 @@ const Singleitem = () => {
         item.quantity = add;
         // console.log(item);
         setProduct(item);
-        const url = `http://localhost:5000/products/${id}`;
+        const url = `https://rajusultan.herokuapp.com/products/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
