@@ -1,11 +1,8 @@
 import React from 'react';
 import deleteicon from '../../../../images/delete.png';
 
-const ManageProduct = ({ product }) => {
+const ManageProduct = ({ product, handleDelete }) => {
     const { _id, picture, name, balance, quantity, color, supplier, company, about } = product;
-    const handleDelete = () => {
-
-    }
     return (
         <div className='col-lg-6 my-5'>
             <div className="d-flex rounded shadow">
@@ -20,7 +17,7 @@ const ManageProduct = ({ product }) => {
                             <p>{company}</p>
                             <p>{quantity}</p>
                         </div>
-                        <button className='border-0 bg-white' onClick={() => handleDelete()}><img style={{ height: "35px" }} className='' src={deleteicon} alt="" /></button>
+                        <button className='border-0 bg-white' onClick={() => handleDelete(_id)}><img style={{ height: "35px" }} className='' src={deleteicon} alt="" /></button>
                     </div>
 
 
